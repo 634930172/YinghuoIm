@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //appcompat-v7
+    api rootProject.ext.dependencies["appcompat-v7"]
+    testImplementation 'junit:junit:4.12'
+    //retrofit2
+    api rootProject.ext.dependencies["retrofit"]
+    //gson
+    api rootProject.ext.dependencies["gson"]
+    //adapter-rxjava
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    //rxJava
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["rxjava"]
+    //rxlifecycle
+    api rootProject.ext.dependencies["rxlifecycle"]
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+    //eventbus
+    api rootProject.ext.dependencies["eventbus"]
+    //glide
+    api rootProject.ext.dependencies["glide"]
+    //butterknife
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    //LeakCanary
+    debugCompile rootProject.ext.dependencies["leakcanary-android"]
+    releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
+    //材料设计
+//    api rootProject.ext.dependencies["design"]
+}

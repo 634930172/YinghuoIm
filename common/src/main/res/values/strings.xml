@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">john</string>
+    <string name="app_exit">再按一次退出程序</string>
+    <string name="dialog_file_too_big">文件过大</string>
+</resources>
