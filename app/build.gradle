@@ -29,6 +29,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    //编译类型选项
     buildTypes {
         debug {
             // 显示Log
@@ -83,7 +84,7 @@ android {
         app { dimension "dimen" }
         //key需要配置
         productFlavors.all {
-            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name, UMENG_KEY: "您的app_key"]
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name, UMENG_KEY:rootProject.ext.config.umengKey]
         }
     }
 }

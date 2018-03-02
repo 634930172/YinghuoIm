@@ -1,4 +1,9 @@
 ext {
+
+    config=[
+            umengKey : "输入您的友盟Key"
+    ]
+
     // rootProject.ext.isDebug.toBoolean()
     dependencies = [
             //v7
