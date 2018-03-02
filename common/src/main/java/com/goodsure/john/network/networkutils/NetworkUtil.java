@@ -13,7 +13,7 @@ import android.telephony.TelephonyManager;
  * Description:网络工具类
  */
 
-public class NetworkUtils {
+public class NetworkUtil {
 
     /**
      * 判断是否有网络连接

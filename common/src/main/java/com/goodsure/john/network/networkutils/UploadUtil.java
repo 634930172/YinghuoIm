@@ -1,4 +1,4 @@
-package com.goodsure.john.network.upload;
+package com.goodsure.john.network.networkutils;
 
 import java.io.File;
 import java.util.LinkedHashMap;
@@ -10,7 +10,7 @@ import okhttp3.RequestBody;
 /**
  * 生成上传文件所需的RequestBody与Map<String, RequestBody>
  */
-public class RetrofitUpload {
+public class UploadUtil {
 
     public static class Builder {
 

@@ -1,4 +1,4 @@
-package com.goodsure.john.network;
+package com.goodsure.john.network.client;
 
 import android.util.Log;
 
