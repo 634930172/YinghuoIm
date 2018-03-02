@@ -1,20 +1,75 @@
 apply plugin: 'com.android.application'
 
-
+def static releaseTime() {
+    return new Date().format("yyyy-MM-dd_HH-mm-ss", TimeZone.getTimeZone("GMT+8"))
+}
 android {
+    signingConfigs {
+        //签名配置
+        release {
+            keyAlias 'YinghuoIm'
+            keyPassword 'goodsure2014520'
+            storeFile file('../yinghuoIm_keystore.jks')
+            storePassword 'goodsure2014520'
+        }
+        debug {
+            keyAlias 'YinghuoIm'
+            keyPassword 'goodsure2014520'
+            storeFile file('../yinghuoIm_keystore.jks')
+            storePassword 'goodsure2014520'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
+        flavorDimensions "dimen"//3.0多渠道打包必须加上的
         applicationId "com.goodsure.yinghuoim"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        //多渠道打包3.0配置
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                if (variant.buildType.name == 'debug') {
+                    if (variant.productFlavors[0].name == 'app') {
+                        outputFileName = "app-debug.apk"
+                    } else {
+                        outputFileName = "Small_v${defaultConfig.versionName}_${variant.productFlavors[0].name}-debug.apk"
+                    }
+                } else if (variant.buildType.name == 'release') {
+                    if (variant.productFlavors[0].name == 'app') {
+                        outputFileName = "app-release.apk"
+                    } else {
+                        outputFileName = "Small_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}-release.apk"
+                    }
+                } else {
+                    outputFileName = '-other.apk'
+                }
+            }
+        }
+    }
+
+    //多渠道打包
+    productFlavors {
+        xiaomi { dimension "dimen" }
+        app { dimension "dimen" }
+        //key需要配置
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name, UMENG_KEY: "您的app_key"]
         }
     }
 }

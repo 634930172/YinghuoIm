@@ -29,21 +29,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     //retrofit2
     api rootProject.ext.dependencies["retrofit"]
-    //gson
+    //Gson
     api rootProject.ext.dependencies["gson"]
-    //adapter-rxjava
+    //adapter-rxJava
     api rootProject.ext.dependencies["adapter-rxjava"]
     //rxJava
     api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["rxjava"]
-    //rxlifecycle
+    //RxLifecycle
     api rootProject.ext.dependencies["rxlifecycle"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
-    //eventbus
+    //EventBus
     api rootProject.ext.dependencies["eventbus"]
     //glide
     api rootProject.ext.dependencies["glide"]
-    //butterknife
+    //ButterKnife
     api rootProject.ext.dependencies["butterknife"]
     //LeakCanary
     debugCompile rootProject.ext.dependencies["leakcanary-android"]
