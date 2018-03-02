@@ -1,4 +1,4 @@
-package com.goodsure.yinghuoim.base;
+package com.goodsure.john.base;
 
 
 import rx.Observable;

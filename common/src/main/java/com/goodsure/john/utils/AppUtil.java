@@ -20,7 +20,7 @@ import java.util.List;
  * Description:APP工具类
  */
 
-public class AppUitls {
+public class AppUtil {
 
     private static Boolean isDebug = null;
 

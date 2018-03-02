@@ -31,12 +31,12 @@ import static android.os.Environment.MEDIA_MOUNTED;
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  * @since 1.0.0
  */
-public final class StorageUtils {
+public final class StorageUtil {
 
     private static final String EXTERNAL_STORAGE_PERMISSION = "android.permission.WRITE_EXTERNAL_STORAGE";
     private static final String INDIVIDUAL_DIR_NAME = "uil-images";
 
-    private StorageUtils() {
+    private StorageUtil() {
     }
 
     /**

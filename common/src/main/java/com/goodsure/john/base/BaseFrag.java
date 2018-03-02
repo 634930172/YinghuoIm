@@ -1,4 +1,4 @@
-package com.goodsure.yinghuoim.base;
+package com.goodsure.john.base;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,13 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-import com.goodsure.yinghuoim.MyApplication;
 import com.squareup.leakcanary.RefWatcher;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
 /**
  * Author: John
  * E-mail：634930172@qq.com
@@ -84,7 +83,7 @@ public abstract class BaseFrag<V,P extends BasePresenter<V>> extends RxFragment 
         }
         super.onDestroy();
         //LeakCanary
-        RefWatcher refWatcher = MyApplication.getRefWatcher(getActivity());
+        RefWatcher refWatcher = BaseApplication.getRefWatcher(getActivity());
         refWatcher.watch(this);
     }
 

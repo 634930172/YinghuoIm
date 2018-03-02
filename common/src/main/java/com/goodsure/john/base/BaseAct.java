@@ -1,12 +1,10 @@
-package com.goodsure.yinghuoim.base;
+package com.goodsure.john.base;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.view.View;
 
-
-import com.goodsure.yinghuoim.MyApplication;
 import com.squareup.leakcanary.RefWatcher;
 import com.trello.rxlifecycle.components.support.RxFragmentActivity;
 
@@ -81,7 +79,7 @@ public abstract class BaseAct<V,P extends BasePresenter<V>> extends RxFragmentAc
         super.onDestroy();
 
         //LeakCanary
-        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
+        RefWatcher refWatcher = BaseApplication.getRefWatcher(this);
         refWatcher.watch(this);
     }
 

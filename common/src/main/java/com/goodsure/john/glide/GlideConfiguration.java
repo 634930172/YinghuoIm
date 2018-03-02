@@ -9,7 +9,7 @@ import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.cache.DiskLruCacheFactory;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.GlideModule;
-import com.goodsure.john.utils.StorageUtils;
+import com.goodsure.john.utils.StorageUtil;
 
 
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class GlideConfiguration implements GlideModule {
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
         // 设置缓存路径和允许缓存的最大大小 10MB
-        builder.setDiskCache(new DiskLruCacheFactory(StorageUtils.getIndividualCacheDirectory(context,"Glide_Cache").getAbsolutePath(),
+        builder.setDiskCache(new DiskLruCacheFactory(StorageUtil.getIndividualCacheDirectory(context,"Glide_Cache").getAbsolutePath(),
                 10 * 1024 * 1024));
         // 设置图片为ARGB_888888
         builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888);

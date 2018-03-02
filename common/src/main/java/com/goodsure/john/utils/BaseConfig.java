@@ -1,13 +1,13 @@
-package com.goodsure.yinghuoim.utils;
+package com.goodsure.john.utils;
 
 /**
  * Author: John
  * E-mail：634930172@qq.com
  * Date: 2018/3/1 14:59
- * Description:应用配置类
+ * Description:基础配置类
  */
 
-public class AppConfig {
+public class BaseConfig {
     /**
      * app_secret
      */

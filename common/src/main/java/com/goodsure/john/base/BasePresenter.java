@@ -1,6 +1,7 @@
-package com.goodsure.yinghuoim.base;
+package com.goodsure.john.base;
 
 import java.lang.ref.WeakReference;
+
 /**
  * Author: John
  * E-mail：634930172@qq.com

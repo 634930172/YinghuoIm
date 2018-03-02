@@ -1,4 +1,4 @@
-package com.goodsure.yinghuoim.utils;
+package com.goodsure.john.network.networkutils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
