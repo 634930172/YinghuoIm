@@ -1,11 +1,10 @@
 package com.goodsure.yinghuoim.moduel.main;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.goodsure.john.base.BaseAct;
-import com.goodsure.john.utils.L;
+import com.goodsure.john.utils.LogUtil;
 import com.goodsure.yinghuoim.R;
 import com.goodsure.yinghuoim.moduel.main.presenter.MainPresenter;
 import com.goodsure.yinghuoim.moduel.main.view.MainView;
@@ -42,7 +41,7 @@ public class MainAct extends BaseAct<MainView, MainPresenter> implements MainVie
 
     @Override
     public void DataCallBack(String str) {
-        L.e("数据是>>>>>" + str);
+        LogUtil.e("数据是>>>>>" + str);
     }
 
 

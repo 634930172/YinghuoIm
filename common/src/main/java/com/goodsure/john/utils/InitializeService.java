@@ -28,7 +28,7 @@ public class InitializeService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         init();
-        L.e("异步启动");
+        LogUtil.e("异步启动");
     }
 
     private void init() {

@@ -10,7 +10,7 @@ import android.content.Context;
  * <p/>
  * Description: application_context 工具类
  */
-public class ContextHolder {
+public class ContextUtil {
     private static Context APPLICATION_CONTEXT;
 
     /* Public Methods */

@@ -3,7 +3,7 @@ package com.goodsure.john.utils.sp;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import com.goodsure.john.utils.ContextHolder;
+import com.goodsure.john.utils.ContextUtil;
 
 /**
  * Author: TinhoXu
@@ -14,25 +14,25 @@ import com.goodsure.john.utils.ContextHolder;
  * 在Application中调用 SharedInfo.init(...)方法
  */
 @SuppressWarnings(value = {"unused", "unchecked"})
-public class SharedInfo {
+public class SharedUtil {
     private        SoftHashMap<String, Object> moMap;
     private SharedPreferences sp;
     private static String fileName;
 
-    private SharedInfo() {
-        sp = SPUtil.getSp(ContextHolder.getContext(), fileName);
+    private SharedUtil() {
+        sp = SPUtil.getSp(ContextUtil.getContext(), fileName);
     }
 
-    public static SharedInfo getInstance() {
+    public static SharedUtil getInstance() {
         return SharedInfoInstance.instance;
     }
 
     private static class SharedInfoInstance {
-        static SharedInfo instance = new SharedInfo();
+        static SharedUtil instance = new SharedUtil();
     }
 
     public static void init(String fileName) {
-        SharedInfo.fileName = fileName;
+        SharedUtil.fileName = fileName;
     }
     ///////////////////////////////////////////////////////////////////////////
     // get

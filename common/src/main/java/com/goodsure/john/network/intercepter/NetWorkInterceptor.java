@@ -3,7 +3,7 @@ package com.goodsure.john.network.intercepter;
 import android.support.annotation.NonNull;
 
 
-import com.goodsure.john.utils.L;
+import com.goodsure.john.utils.LogUtil;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ public class NetWorkInterceptor implements Interceptor {
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request request = chain.request();
-        L.e(">>>>>>NetWorkInterceptor:"+request.method());
+        LogUtil.e(">>>>>>NetWorkInterceptor:"+request.method());
         return  chain.proceed(request);
     }
 }

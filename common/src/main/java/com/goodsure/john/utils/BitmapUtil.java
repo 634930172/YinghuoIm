@@ -32,7 +32,7 @@ public class BitmapUtil {
     public static byte[] bitmapToBytes(Bitmap bitmap) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        L.e("位图大小：" + baos.toByteArray().length / 1024 + "kb");
+        LogUtil.e("位图大小：" + baos.toByteArray().length / 1024 + "kb");
         return baos.toByteArray();
     }
 
@@ -57,13 +57,13 @@ public class BitmapUtil {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         image.compress(Bitmap.CompressFormat.PNG, 100, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
         int options = 100;
-        L.e("size:" + baos.toByteArray().length / 1024);
+        LogUtil.e("size:" + baos.toByteArray().length / 1024);
         while (baos.toByteArray().length / 1024 > 100) {  //循环判断如果压缩后图片是否大于100kb,大于继续压缩
             baos.reset();//重置baos即清空baos
             //第一个参数 ：图片格式 ，第二个参数： 图片质量，100为最高，0为最差  ，第三个参数：保存压缩后的数据的流
             image.compress(Bitmap.CompressFormat.PNG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
             options -= 10;//每次都减少10
-            L.e("循环size：" + baos.toByteArray().length / 1024 + " options:" + options);
+            LogUtil.e("循环size：" + baos.toByteArray().length / 1024 + " options:" + options);
             if (options == 0)
                 break;
         }
@@ -96,7 +96,7 @@ public class BitmapUtil {
      */
     public static Bitmap compressBitmapFormUri(Activity ac, Uri uri) throws FileNotFoundException, IOException {
         InputStream           input             = ac.getContentResolver().openInputStream(uri);
-        L.e("原始图片大小： "+ input.available()/1024+"kb");
+        LogUtil.e("原始图片大小： "+ input.available()/1024+"kb");
         BitmapFactory.Options onlyBoundsOptions = new BitmapFactory.Options();
         onlyBoundsOptions.inJustDecodeBounds = true;
         onlyBoundsOptions.inDither = true;//optional
@@ -133,7 +133,7 @@ public class BitmapUtil {
         if(input!=null){
             input.close();
         }
-        L.e("像素压缩后大小： " + bitmapToBytes(bitmap).length / 1024 + " kb  缩放比例： "+be);
+        LogUtil.e("像素压缩后大小： " + bitmapToBytes(bitmap).length / 1024 + " kb  缩放比例： "+be);
 
         return qualityCompressImage(bitmap);//再进行质量压缩 意义不大
         //        return bitmap;
@@ -232,7 +232,7 @@ public class BitmapUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        L.e("质量压缩前>>>" + bitmapToBytes(bitmap).length / 1024);
+        LogUtil.e("质量压缩前>>>" + bitmapToBytes(bitmap).length / 1024);
 
         //        return compressImage(bitmap);//再进行质量压缩
 
@@ -296,7 +296,7 @@ public class BitmapUtil {
             }
         }
         ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
-        L.e("质量压缩后" + baos.toByteArray().length / 1024 + "kb");
+        LogUtil.e("质量压缩后" + baos.toByteArray().length / 1024 + "kb");
         return BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
     }
 

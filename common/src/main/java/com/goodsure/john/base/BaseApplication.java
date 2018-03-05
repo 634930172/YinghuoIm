@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.goodsure.john.utils.AppUtil;
-import com.goodsure.john.utils.ContextHolder;
-import com.goodsure.john.utils.sp.SharedInfo;
+import com.goodsure.john.utils.ContextUtil;
+import com.goodsure.john.utils.sp.SharedUtil;
 import com.goodsure.john.utils.BaseConfig;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -23,8 +23,8 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AppUtil.syncIsDebug(this);
-        ContextHolder.init(this);
-        SharedInfo.init(BaseConfig.SP_NAME);
+        ContextUtil.init(this);
+        SharedUtil.init(BaseConfig.SP_NAME);
         refWatcher = LeakCanary.install(this);//LeakCanary初始化
     }
 

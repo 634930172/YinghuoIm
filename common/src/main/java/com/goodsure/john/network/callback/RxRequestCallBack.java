@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.goodsure.john.network.entity.HttpResult;
 import com.goodsure.john.network.networkutils.LoadingDialog;
-import com.goodsure.john.utils.L;
+import com.goodsure.john.utils.LogUtil;
 
 
 import java.net.ConnectException;
@@ -48,7 +48,7 @@ public abstract class RxRequestCallBack<T> extends Subscriber<HttpResult<T>> imp
         dialog = new LoadingDialog(context);
         dialog.setOnCancelListener(this);
         dialog.show();
-        L.e("dialogshow>>>>>");
+        LogUtil.e("dialogshow>>>>>");
     }
 
     /**
@@ -60,7 +60,7 @@ public abstract class RxRequestCallBack<T> extends Subscriber<HttpResult<T>> imp
         dialog = new LoadingDialog(context,loadingMsg);
         dialog.setOnCancelListener(this);
         dialog.show();
-        L.e("dialogshow>>>>>");
+        LogUtil.e("dialogshow>>>>>");
     }
 
 
@@ -105,7 +105,7 @@ public abstract class RxRequestCallBack<T> extends Subscriber<HttpResult<T>> imp
     private void dismissDialog() {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
-            L.e("dialogdismiss>>>>>");
+            LogUtil.e("dialogdismiss>>>>>");
         }
     }
 

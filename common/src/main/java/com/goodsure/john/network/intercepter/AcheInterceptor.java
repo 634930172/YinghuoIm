@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 
 import com.goodsure.john.network.networkutils.NetworkUtil;
-import com.goodsure.john.utils.ContextHolder;
+import com.goodsure.john.utils.ContextUtil;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -30,14 +30,14 @@ public class AcheInterceptor implements Interceptor {
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request request = chain.request();
         if (request.method().equals("GET")) {
-            if (!NetworkUtil.isNetworkConnected(ContextHolder.getContext())) {
+            if (!NetworkUtil.isNetworkConnected(ContextUtil.getContext())) {
                 request = request.newBuilder()
                         .cacheControl(new CacheControl.Builder().onlyIfCached()
                                 .maxStale(request.cacheControl().maxStaleSeconds(), TimeUnit.SECONDS).build())
                         .build();
             }
             Response response = chain.proceed(request);
-            if (NetworkUtil.isNetworkConnected(ContextHolder.getContext())) {
+            if (NetworkUtil.isNetworkConnected(ContextUtil.getContext())) {
                 response.newBuilder()
                         .header("Cache-Control", "Cache-Control:,max-age=0")
                         .removeHeader("Pragma")

@@ -28,12 +28,12 @@ public class ImaZipUtil {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         // 质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
         image.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        L.e("尺寸压缩后的size:" + baos.toByteArray().length / 1024 + "kb");
+        LogUtil.e("尺寸压缩后的size:" + baos.toByteArray().length / 1024 + "kb");
         int options = 100;
         // 循环判断如果压缩后图片是否大于100kb,大于继续压缩
         while (baos.toByteArray().length / 1024 > 20) {
             // 重置baos即清空baos
-            L.e("size:" + baos.toByteArray().length / 1024 + " options:" + options);
+            LogUtil.e("size:" + baos.toByteArray().length / 1024 + " options:" + options);
             baos.reset();
             // 这里压缩options%，把压缩后的数据存放到baos中
             image.compress(Bitmap.CompressFormat.PNG, options, baos);
@@ -198,7 +198,7 @@ public class ImaZipUtil {
     public static byte[] bitmapToBytes(Bitmap bitmap) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        L.e("位图大小：" + baos.toByteArray().length / 1024 + "kb");
+        LogUtil.e("位图大小：" + baos.toByteArray().length / 1024 + "kb");
         return baos.toByteArray();
     }
 

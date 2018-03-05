@@ -25,17 +25,17 @@ import java.util.List;
  * Description:权限管理工具类
  */
 
-public class PermissonCheck {
+public class PermissionUtil {
 
     private int REQUEST_CODE_PERMISSION = 0x00099;
 
-    private static final PermissonCheck ourInstance = new PermissonCheck();
+    private static final PermissionUtil ourInstance = new PermissionUtil();
 
-    public static PermissonCheck getInstance() {
+    public static PermissionUtil getInstance() {
         return ourInstance;
     }
 
-    private PermissonCheck() {
+    private PermissionUtil() {
     }
 
     private PermissionsResultListener listener;
@@ -46,7 +46,7 @@ public class PermissonCheck {
      * @param permissions 请求的权限
      * @param requestCode 请求权限的请求码
      */
-    public PermissonCheck requestPermission(Activity activity, String[] permissions, int requestCode, PermissionsResultListener listener) {
+    public PermissionUtil requestPermission(Activity activity, String[] permissions, int requestCode, PermissionsResultListener listener) {
         this.REQUEST_CODE_PERMISSION = requestCode;
         this.listener = listener;
         if (checkPermissions(activity, permissions)) {

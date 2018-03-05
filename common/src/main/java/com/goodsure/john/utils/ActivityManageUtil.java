@@ -17,7 +17,7 @@ import java.util.Stack;
  * Description:Activity管理工具类
  */
 
-public class ActivityManage {
+public class ActivityManageUtil {
     private static final String TAG = "ActivityManage";
     /**
      * 堆栈管理对象
@@ -96,7 +96,7 @@ public class ActivityManage {
     }
 
     public static void setOperations(ExtraOperations operations) {
-        ActivityManage.operations = operations;
+        ActivityManageUtil.operations = operations;
     }
 
     /**
@@ -157,7 +157,7 @@ public class ActivityManage {
     }
 
     public static void setTopActivity(Activity topActivity) {
-        ActivityManage.topActivity = new WeakReference<>(topActivity);
+        ActivityManageUtil.topActivity = new WeakReference<>(topActivity);
     }
 
     /**

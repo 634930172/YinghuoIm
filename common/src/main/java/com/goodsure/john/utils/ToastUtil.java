@@ -24,11 +24,11 @@ public class ToastUtil {
     private static Toast toast;
 
     public static void toast(String msg) {
-        toast(ContextHolder.getContext(), msg);
+        toast(ContextUtil.getContext(), msg);
     }
 
     public static void toast(int id) {
-        toast(ContextHolder.getContext(), ContextHolder.getContext().getString(id));
+        toast(ContextUtil.getContext(), ContextUtil.getContext().getString(id));
     }
 
     private static void toast(Context context, String msg) {

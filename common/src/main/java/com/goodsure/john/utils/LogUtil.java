@@ -10,7 +10,7 @@ import android.util.Log;
  * Description:Loger日志类
  */
 
-public class L {
+public class LogUtil {
 
     public static final String TAG = "test";
 

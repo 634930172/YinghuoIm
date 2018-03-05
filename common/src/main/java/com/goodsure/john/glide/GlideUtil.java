@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
-import com.goodsure.john.utils.ContextHolder;
+import com.goodsure.john.utils.ContextUtil;
 
 
 /**
@@ -86,8 +86,8 @@ public class GlideUtil {
      * 清除缓存
      */
     public static void clearCache(){
-        Glide.get(ContextHolder.getContext()).clearDiskCache();//清理磁盘缓存 需要在子线程中执行
-        Glide.get(ContextHolder.getContext()).clearMemory();//清理内存缓存 可以在UI主线程中进行
+        Glide.get(ContextUtil.getContext()).clearDiskCache();//清理磁盘缓存 需要在子线程中执行
+        Glide.get(ContextUtil.getContext()).clearMemory();//清理内存缓存 可以在UI主线程中进行
     }
 
 }

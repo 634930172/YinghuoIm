@@ -5,7 +5,7 @@ import android.util.Log;
 import com.goodsure.john.network.converter.HttpCovertFactory;
 import com.goodsure.john.network.intercepter.AcheInterceptor;
 import com.goodsure.john.utils.BaseConfig;
-import com.goodsure.john.utils.ContextHolder;
+import com.goodsure.john.utils.ContextUtil;
 import com.goodsure.john.utils.StorageUtil;
 
 
@@ -28,7 +28,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 public class HttpClient {
 
     private static final long cacheSize = 1024 * 1024 * 10;// 缓存文件最大限制大小10M
-    private static String cacheDirectory = StorageUtil.getIndividualCacheDirectory(ContextHolder.getContext(),
+    private static String cacheDirectory = StorageUtil.getIndividualCacheDirectory(ContextUtil.getContext(),
             "OkHttp_Cache").getAbsolutePath(); //优先外部存储私有缓存目录 /storage/emulated/0/Android/data/com.john.testproject/cache
     // 应用删除，相关文件也会被删除
     private static Cache cache = new Cache(new File(cacheDirectory), cacheSize);  //缓存对象

@@ -12,7 +12,7 @@ import android.os.Bundle;
  * Description:界面跳转类
  */
 
-public class Jump {
+public class JumpUtil {
 
     private static final String BUNDLE = "bundle";
 

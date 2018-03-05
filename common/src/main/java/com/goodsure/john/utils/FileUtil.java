@@ -561,7 +561,7 @@ public class FileUtil {
      * 保存图片到本地
      */
     public static String saveFile(Context context, String filePath, String fileName, byte[] bytes) {
-        if (!PermissonCheck.getInstance().checkPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE})) {
+        if (!PermissionUtil.getInstance().checkPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE})) {
             return "";
         }
         String fileFullName = "";
