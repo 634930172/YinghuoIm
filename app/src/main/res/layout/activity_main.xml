@@ -9,12 +9,19 @@
         android:id="@+id/bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Temp"
+        android:text="访问数据"
         />
 
     <Button
         android:id="@+id/bt2"
-        android:text="text"
+        android:text="读取本地HTML"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt3"
+        android:text="读取外部url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

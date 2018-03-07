@@ -14,7 +14,7 @@ import android.os.Bundle;
 
 public class JumpUtil {
 
-    private static final String BUNDLE = "bundle";
+    public static final String BUNDLE = "bundle";
 
     public static void lunch(Activity activity, Class<?> cls) {
         Intent intent = new Intent(activity, cls);
@@ -38,4 +38,10 @@ public class JumpUtil {
         activity.startActivityForResult(intent, requestCode);
     }
 
+
+    public static void lunch(Activity activity, Class<?> cls,String extra) {
+        Intent intent = new Intent(activity, cls);
+        intent.putExtra(BUNDLE,extra);
+        activity.startActivity(intent);
+    }
 }

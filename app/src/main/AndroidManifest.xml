@@ -34,6 +34,11 @@
         </activity>
 
 
+        <!--WebView加载基类-->
+        <activity android:name="com.goodsure.john.base.BaseWebAct"
+            android:screenOrientation="portrait"
+            />
+
         <!-- 友盟的key与渠道 -->
         <meta-data
             android:name="UMENG_APPKEY"
