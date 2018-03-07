@@ -5,6 +5,7 @@ import android.widget.Button;
 
 import com.goodsure.john.base.BaseAct;
 import com.goodsure.john.base.BaseWebAct;
+import com.goodsure.john.utils.BaseConfig;
 import com.goodsure.john.utils.JumpUtil;
 import com.goodsure.john.utils.LogUtil;
 import com.goodsure.yinghuoim.R;
@@ -65,28 +66,7 @@ public class MainAct extends BaseAct<MainView, MainPresenter> implements MainVie
                 sb.append("<title> 动态加载获取的格式 </title>");
                 sb.append("</head>");
                 sb.append("<body>");
-                //<a href="http://www.cctv.com">Java联盟</a>
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
-                sb.append("<h2> 欢迎您访问</h2>");
+                sb.append(BaseConfig.WEB_DATA);
                 sb.append("</body>");
                 sb.append("</html>");
                 LogUtil.d(sb.toString());
