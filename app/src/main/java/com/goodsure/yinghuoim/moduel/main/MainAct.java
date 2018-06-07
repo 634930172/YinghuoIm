@@ -47,7 +47,7 @@ public class MainAct extends BaseAct<MainView, MainPresenter> implements MainVie
     @Override
     public void DataCallBack(String str) {
         LogUtil.e("数据是>>>>>" + str);
-        //设置忽略提交文件
+        //设置忽略提交文件 配置项目姓名和邮箱
     }
 
 
