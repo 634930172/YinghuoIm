@@ -15,7 +15,7 @@ import com.goodsure.yinghuoim.moduel.main.view.MainView;
 
 public class MainPresenter extends BasePresenter<MainView> {
 
-    private MainModelImp mMainModelImp;
+    private MainModel mMainModelImp;
 
     public MainPresenter(){
         mMainModelImp=new MainModelImp();
